@@ -48,7 +48,7 @@ export const loadActivity = createAsyncThunk(
   'activity/loadActivity',
   async (activityId, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`http://localhost:5000/loadActivity/${activityId}`)
+      const response = await axios.post(`https://one10524redboost.onrender.com/loadActivity/${activityId}`)
       return response.data
     } catch (error) {
       return rejectWithValue(error.response.data)
@@ -62,7 +62,7 @@ export const loadActivitiesByProgramId = createAsyncThunk(
   async (programId, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:5000/loadActivitiesByProgramId/${programId}`,
+        `https://one10524redboost.onrender.com/loadActivitiesByProgramId/${programId}`,
       )
       return response.data
     } catch (error) {
