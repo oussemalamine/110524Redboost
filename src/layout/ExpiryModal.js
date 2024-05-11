@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 function ExpiryModal({ setIsLogged, setModalOpen, modalOpen }) {
   const navigate = useNavigate()
   const handleLogin = () => {
-    setIsLogged(false)
+    setIsLogged(true)
   }
   return (
     <>
