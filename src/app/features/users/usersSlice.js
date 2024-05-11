@@ -4,7 +4,7 @@ import axios from 'axios'
 //load users
 export const loadUsers = createAsyncThunk('programs/loadUsers', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.post('http://localhost:5000/loadUsers')
+    const response = await axios.post('https://one10524redboost.onrender.com/loadUsers')
     return response.data
   } catch (error) {
     return rejectWithValue(error.response.data)

@@ -5,7 +5,7 @@ export const loadUserData = createAsyncThunk(
   'userData/loadCurrentUser',
   async (email, { rejectWithValue }) => {
     try {
-      const response = await axios.post('http://localhost:5000/loadCurrentUser', { email: email })
+      const response = await axios.post('https://one10524redboost.onrender.com/loadCurrentUser', { email: email })
       return response.data
     } catch (error) {
       return rejectWithValue(error.response.data)
