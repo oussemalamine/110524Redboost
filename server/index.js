@@ -49,6 +49,10 @@ const store = new MongoDBSession({
   collection: 'sessions',
 })
 
+store.on('error', (error) => {
+  console.error('Session store error:', error);
+});
+
 app.use(
   session({
     key: 'sessionId',

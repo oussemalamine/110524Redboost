@@ -16,6 +16,9 @@ router.get("/logout", (req, res) => {
       res.clearCookie("sessionId");
       res.status(200).json({ message: "Logout successful" }); // Clear the session cookie (replace "connect.sid" with your session cookie name if it's different)
     }
+    console.log('User logged in:', req.user);
+    console.log('Session:', req.session);
+    // send response to client
   });
 });
 
