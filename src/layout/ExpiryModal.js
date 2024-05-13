@@ -3,7 +3,7 @@ import { CModal, CModalHeader, CModalTitle, CModalBody, CModalFooter, CButton } 
 import { Link, useNavigate } from 'react-router-dom'
 
 function ExpiryModal({ setIsLogged, setModalOpen, modalOpen }) {
-  console.log(modalOpen);
+  console.log("test modal: ", modalOpen);
   const navigate = useNavigate()
   const handleLogin = () => {
     setIsLogged(false)
