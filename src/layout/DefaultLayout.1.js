@@ -25,7 +25,7 @@ export const DefaultLayout = ({ setIsLogged, isLogged}) => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const response = await axiosInstance.get('/login')
+        const response = await axiosInstance.get('/checkAuth')
         console.log(response);
         if (response.data.authenticated) {
           setProgress(AUTH_PROGRESS)
