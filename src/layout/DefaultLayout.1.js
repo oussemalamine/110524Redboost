@@ -37,7 +37,6 @@ useEffect (() => {
           setProgress(ALL_DATA_LOADED_PROGRESS)
           setLoading(false)
         } else {
-          setModalOpen(true)
           setLoading(false)
         }
       } catch (error) {
