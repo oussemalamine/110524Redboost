@@ -5,7 +5,7 @@ export const createActivity = createAsyncThunk(
   'activity/addActivity',
   async (activityData, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`http://localhost:5000/addActivity`, activityData)
+      const response = await axios.post(`https://one10524redboost.onrender.com/addActivity`, activityData)
       return response.data
     } catch (error) {
       return rejectWithValue(error.response.data)
@@ -18,7 +18,7 @@ export const deleteActivity = createAsyncThunk(
   'activity/deleteActivity',
   async (activityId, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/deleteActivity/${activityId}`)
+      const response = await axios.delete(`https://one10524redboost.onrender.com/deleteActivity/${activityId}`)
       return response.data
     } catch (error) {
       return rejectWithValue(error.response.data)
@@ -33,7 +33,7 @@ export const updateActivity = createAsyncThunk(
     try {
       const { activityId } = activityData
       const response = await axios.put(
-        `http://localhost:5000/updateActivity/${activityId}`,
+        `https://one10524redboost.onrender.com/updateActivity/${activityId}`,
         activityData,
       )
       return response.data
