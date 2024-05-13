@@ -57,13 +57,21 @@ app.use(
     saveUninitialized: false,
     store: store,
     cookie: {
-      secure: false,
+      secure: true,
       httpOnly: false,
       maxAge: 24 * 60 * 60 * 1000,
+
       // maxAge: 30 * 1000,
+      sameSite: 'none',
     },
   }),
 )
+
+app.use((req, res, next) => {
+  console.log('Session ID:', req.sessionID);
+  console.log('Session data:', req.session);
+  next();
+});
 
 app.use(passport.initialize())
 app.use(passport.session())

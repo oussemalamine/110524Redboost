@@ -19,12 +19,9 @@ export const DefaultLayout = ({ setIsLogged, isLogged}) => {
   const [progress, setProgress] = useState(0)
   const [error, setError] = useState('')
   const dispatch = useDispatch()
-useEffect (() => {
-  console.log("islogged: ", isLogged);
 
 
-}, [isLogged, setIsLogged]
-)
+
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -37,6 +34,7 @@ useEffect (() => {
           setProgress(ALL_DATA_LOADED_PROGRESS)
           setLoading(false)
         } else {
+          console.log('failed in default layout hhh');
           setLoading(false)
         }
       } catch (error) {

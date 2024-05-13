@@ -10,8 +10,11 @@ router.get('/login', (req, res) => {
       email: req.session.email,
     })
   } else {
+    console.log('authenticated : failed hhh ')
     return res.json({ authenticated: false })
   }
+
+
 })
 
 module.exports = router
