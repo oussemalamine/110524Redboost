@@ -41,7 +41,7 @@ const App = () => {
 
   useEffect(() => {
     const checkAuth = async () => {
-      await axiosInstance.get('/login').then((response) => {
+      await axiosInstance.get('/checkAuth').then((response) => {
         if (response.data.authenticated) {
           // setUserEmail(response.data.email)
           setIsLogged(true)
@@ -52,23 +52,14 @@ const App = () => {
         console.log('checkAuth:', response.data)
       })
     }
-    checkAuth()
-  }, [])
-  // useEffect(() => {
-  //   if (userEmail.length === 0) return
-  //   const fetchUser = async () => {
-  //     try {
-  //       const response = await axiosInstance.get(`/users?email=${userEmail}`)
-  //       if (response.data) {
-  //         const { password, confirmation, ...userDataWithoutPassword } = response.data
-  //         dispatch(setUserData(userDataWithoutPassword))
-  //       }
-  //     } catch (error) {
-  //       console.log('Error fetching user data:', error)
-  //     }
-  //   }
-  //   fetchUser()
-  // }, [userEmail])
+    checkAuth();
+    // Call checkAuth() every 30 seconds
+    const intervalId = setInterval(checkAuth, 30 * 1000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array ensures that this effect runs only once, similar to componentDidMount
+
   useEffect(() => {
     const fetchData = async () => {
       try {
