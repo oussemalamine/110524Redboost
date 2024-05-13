@@ -13,13 +13,18 @@ const AUTH_PROGRESS = 33
 const USER_DATA_PROGRESS = 66
 const ALL_DATA_LOADED_PROGRESS = 100
 
-export const DefaultLayout = ({ setIsLogged }) => {
+export const DefaultLayout = ({ setIsLogged, isLogged}) => {
   const [modalOpen, setModalOpen] = useState(false)
   const [loading, setLoading] = useState(true)
   const [progress, setProgress] = useState(0)
   const [error, setError] = useState('')
   const dispatch = useDispatch()
+useEffect (() => {
+  console.log("islogged: ", isLogged);
 
+
+}, [isLogged, setIsLogged]
+)
   useEffect(() => {
     const loadData = async () => {
       try {
