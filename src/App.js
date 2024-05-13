@@ -53,11 +53,8 @@ const App = () => {
       })
     }
     checkAuth();
-    // Call checkAuth() every 30 seconds
-    const intervalId = setInterval(checkAuth, 30 * 1000);
 
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(intervalId);
+
   }, []); // Empty dependency array ensures that this effect runs only once, similar to componentDidMount
 
   useEffect(() => {
