@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: 'https://one10524redboost.onrender.com',
+  baseURL: 'https://110524-redboost.vercel.app',
   withCredentials: true, // Important for sessions
 })
 
