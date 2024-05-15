@@ -1,11 +1,10 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "/api/**", "use": "@vercel/node" },
-    { "src": "/(.*)", "use": "@vercel/static" }
-  ],
+  "version": 3,
+  "build": {
+    "command": "npm run build"
+  },
   "routes": [
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/(.*)",
+    "dest": "/" }
   ]
 }
